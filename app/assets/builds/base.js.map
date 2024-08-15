@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sources": ["../../javascript/base.js"],
+  "sourcesContent": [
+    "console.log(\"Base.js is loaded\");"
+  ],
+  "mappings": ";AAAA,QAAQ,IAAI,mBAAmB;",
+  "debugId": "D397E571328A4FD964756E2164756E21",
+  "names": []
+}
