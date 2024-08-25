@@ -4,15 +4,15 @@
       h2 新規登録
 
       .form-item
-        = f.label :email, 'メールアドレス'
+        = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
 
       .form-item
-        = f.label :password, 'パスワード'
+        = f.label :password
         = f.password_field :password, autocomplete: 'new-password', class: 'form-control'
 
       .form-item
-        = f.label :password_confirmation, 'パスワード（確認）'
+        = f.label :password_confirmation
         = f.password_field :password_confirmation, class: 'form-control'
 
       .form-item

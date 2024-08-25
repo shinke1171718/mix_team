@@ -4,11 +4,11 @@
       h2 ログイン
 
       .form-item
-        = f.label :email, 'メールアドレス'
+        = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
 
       .form-item
-        = f.label :password, 'パスワード'
+        = f.label :password
         = f.password_field :password, autocomplete: 'current-password', class: 'form-control'
 
       .form-item
