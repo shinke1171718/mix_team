@@ -1,0 +1,7 @@
+h1= t(".title")
+
+/ = button_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn', data: { turbo: false }
+= link_to 'ログアウト', destroy_admin_session_path, method: :delete, data: { turbo_method: :delete }, class: 'btn', id: 'logout-link'
+
+/ = form_with url: destroy_admin_session_path, method: :delete, data: { turbo: true }, class: 'btn' do
+/   = submit_tag 'ログアウト'

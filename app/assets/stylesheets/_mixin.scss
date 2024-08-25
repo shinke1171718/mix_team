@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------
+# ミックスイン
+--------------------------------------------------------------*/
+
+// メディアクエリ
+$mq-min: (
+	"md": "screen and (min-width: 897px)",
+	"lg": "screen and (min-width: 1025px)",
+) !default;
+
+$mq-max: (
+	"md": "screen and (max-width: 896px)",
+	"lg": "screen and (max-width: 1024px)",
+) !default;
+
+@mixin mq-min($breakpoint) {
+
+	@media #{map-get($mq-min, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq-max($breakpoint) {
+
+	@media #{map-get($mq-max, $breakpoint)} {
+		@content;
+	}
+}

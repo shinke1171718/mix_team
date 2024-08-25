@@ -1,0 +1,28 @@
+ja:
+  devise:
+    failure:
+      unauthenticated: "ログインが必要です。"
+      unconfirmed: "メールアドレスの確認が必要です。"
+      locked: "アカウントがロックされています。"
+      invalid: "メールアドレスまたはパスワードが正しくありません。"
+      timeout: "セッションがタイムアウトしました。"
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません。"
+      inactive: "アカウントが有効ではありません。"
+    registrations:
+      signed_up: "ログインしました。"
+      signed_up_but_unconfirmed: "アカウントが登録されましたが、メールアドレスの確認が必要です。"
+      signed_up_but_inactive: "アカウントが登録されましたが、アクティブではありません。"
+      updated: "アカウント情報が更新されました。"
+      destroyed: "アカウントが削除されました。"
+    passwords:
+      send_instructions: "パスワード再設定の案内をメールで送信しました。"
+      updated: "パスワードが更新されました。"
+    confirmations:
+      send_instructions: "確認メールを送信しました。"
+      confirmed: "メールアドレスが確認されました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    unlocks:
+      send_instructions: "アカウントロック解除のメールを送信しました。"
+      unlocked: "アカウントのロックが解除されました。"

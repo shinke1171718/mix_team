@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+# 基本設定
+--------------------------------------------------------------*/
+
+// 基本タグ
+* {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  background-color: #ffe7c7;
+
+  @include mq-max(md) {
+    background-color: #fff;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: bottom;
+  border: none;
+  transition: opacity .2s;
+}
+
+#content {
+  min-height: calc(100vh - 100px - 243px);
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}

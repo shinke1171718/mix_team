@@ -1,8 +1,8 @@
 {
-  "name": "shuffle-lunch-app",
+  "name": "mix_team",
   "scripts": {
-    "build": "bun build app/javascript/base.js",
-    "css:build": "sass app/assets/stylesheets/application.scss:app/assets/builds/application.css --no-source-map"
+    "build": "bun build app/javascript/admin.js --outdir=app/assets/builds && bun build app/javascript/application.js --outdir=app/assets/builds",
+    "css:build": "sass app/assets/stylesheets/admin.scss:app/assets/builds/admin.css --no-source-map"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -11,5 +11,9 @@
     "typescript": "^5.0.0"
   },
   "module": "index.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.5"
+  }
 }
