@@ -26,10 +26,6 @@ body {
   word-break: break-word;
   overflow-wrap: break-word;
   background-color: #ffe7c7;
-
-  @include mq-max(md) {
-    background-color: #fff;
-  }
 }
 
 img {

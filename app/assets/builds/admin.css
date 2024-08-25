@@ -29,11 +29,6 @@ body {
   overflow-wrap: break-word;
   background-color: #ffe7c7;
 }
-@media screen and (max-width: 896px) {
-  body {
-    background-color: #fff;
-  }
-}
 
 img {
   max-width: 100%;
@@ -62,16 +57,46 @@ img {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-}
-.message.notice {
-  background-color: rgba(133, 254, 162, 0.5);
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(133, 254, 162, 0.8);
   color: #155724;
   border: 1px solid #c3e6cb;
+  max-width: 300px;
+  position: absolute;
+  top: 73px;
+  left: 20px;
+  z-index: 1000;
+  animation: fadeInLeft 0.5s ease-in-out;
+}
+.message.notice {
+  background-color: rgba(133, 254, 162, 0.9);
+  color: #155724;
+  border: 1px solid rgba(133, 254, 162, 0.7);
 }
 .message.alert {
-  background-color: rgba(247, 174, 180, 0.5);
+  background-color: rgba(247, 174, 180, 0.9);
   color: #721c24;
-  border: 1px solid #f5c6cb;
+  border: 1px solid rgba(247, 174, 180, 0.7);
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 896px) {
+  .message {
+    font-size: 10px;
+    padding: 6px 10px;
+    max-width: 90%;
+    top: 51px;
+    left: 3%;
+  }
 }
 
 .container {
@@ -186,7 +211,10 @@ h2 {
 }
 
 .header {
-  background-color: #f47b20;
+  background-color: #ff7e5f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
 }
 .header__container {
   max-width: 1400px;
@@ -206,5 +234,117 @@ h2 {
 @media screen and (max-width: 896px) {
   .header__page-title h1 {
     font-size: 15px;
+  }
+}
+.header__menu-container {
+  display: flex;
+  margin: 0;
+}
+@media screen and (max-width: 896px) {
+  .header__menu-container {
+    display: block;
+    flex-direction: column;
+    background: rgba(255, 126, 95, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    z-index: 999;
+  }
+}
+.header__menu-item {
+  margin-right: 70px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+.header__menu-item:last-child {
+  margin-right: 0;
+}
+.header__menu-item:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease-in-out;
+}
+.header__menu-item:hover {
+  color: #f0f0f0;
+}
+.header__menu-item:hover:after {
+  width: 100%;
+}
+@media screen and (max-width: 896px) {
+  .header__menu-item {
+    margin: 20px 0;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+}
+.header__menu-link {
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  padding: 10px 0;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header__menu-link:hover {
+  font-weight: bold;
+}
+@media screen and (max-width: 896px) {
+  .header__menu-link {
+    width: 100%;
+  }
+  .header__menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.header__hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+}
+@media screen and (max-width: 896px) {
+  .header__hamburger {
+    display: flex;
+  }
+}
+.header__hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.header__menu-toggle {
+  display: none;
+}
+@media screen and (max-width: 896px) {
+  .header__menu-toggle:checked ~ .header__menu-container {
+    max-height: 500px; /* メニュー展開時の最大高さ */
+    opacity: 1;
+    padding: 10px 10px 50px;
+  }
+  .header__menu-toggle:checked ~ .header__menu-container .header__menu-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

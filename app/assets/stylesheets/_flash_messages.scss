@@ -5,16 +5,46 @@
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(133, 254, 162, 0.8);
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  max-width: 300px;
+  position: absolute;
+  top: 73px;
+  left: 20px;
+  z-index: 1000;
+  animation: fadeInLeft 0.5s ease-in-out;
 
   &.notice {
-    background-color: rgba(133, 254, 162, 0.5);
+    background-color: rgba(133, 254, 162, 0.9);
     color: #155724;
-    border: 1px solid #c3e6cb;
+    border: 1px solid rgba(133, 254, 162, 0.7);
+  }
+  
+  &.alert {
+    background-color: rgba(247, 174, 180, 0.9);
+    color: #721c24;
+    border: 1px solid rgba(247, 174, 180, 0.7);
   }
 
-  &.alert {
-    background-color: rgba(247, 174, 180, 0.5);
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @include mq-max(md) {
+    font-size: 10px;
+    padding: 6px 10px;
+    max-width: 90%;
+    top: 51px;
+    left: 3%;
   }
 }
