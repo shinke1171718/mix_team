@@ -1,0 +1,118 @@
+.container {
+  padding: 60px 0;
+
+  @include mq-max(md) {
+    padding: 0;
+  }
+}
+
+.login-container,
+.signup-container,
+.forgot-password-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+
+  @include mq-max(md) {
+    border: none;
+    border-radius: none;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.form-item {
+  margin-bottom: 20px;
+
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a488;
+  }
+}
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+
+  span {
+    background-color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24%;
+    height: 1px;
+    background-color: #ccc;
+    vertical-align: middle;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+}
+
+.links {
+  text-align: center;
+
+  a {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

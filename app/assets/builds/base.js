@@ -1,5 +1,0 @@
-// app/javascript/base.js
-console.log("Base.js is loaded");
-
-//# debugId=D397E571328A4FD964756E2164756E21
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vamF2YXNjcmlwdC9iYXNlLmpzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWwogICAgImNvbnNvbGUubG9nKFwiQmFzZS5qcyBpcyBsb2FkZWRcIik7IgogIF0sCiAgIm1hcHBpbmdzIjogIjtBQUFBLFFBQVEsSUFBSSxtQkFBbUI7IiwKICAiZGVidWdJZCI6ICJEMzk3RTU3MTMyOEE0RkQ5NjQ3NTZFMjE2NDc1NkUyMSIsCiAgIm5hbWVzIjogW10KfQ==

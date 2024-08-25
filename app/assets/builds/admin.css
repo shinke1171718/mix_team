@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+# ミックスイン
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# 基本設定
+--------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  background-color: #ffe7c7;
+}
+@media screen and (max-width: 896px) {
+  body {
+    background-color: #fff;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: bottom;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+#content {
+  min-height: calc(100vh - 100px - 243px);
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.message {
+  font-size: 15px;
+  padding: 10px 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.message.notice {
+  background-color: rgba(133, 254, 162, 0.5);
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.message.alert {
+  background-color: rgba(247, 174, 180, 0.5);
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.container {
+  padding: 60px 0;
+}
+@media screen and (max-width: 896px) {
+  .container {
+    padding: 0;
+  }
+}
+
+.login-container,
+.signup-container,
+.forgot-password-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+@media screen and (max-width: 896px) {
+  .login-container,
+  .signup-container,
+  .forgot-password-container {
+    border: none;
+    border-radius: none;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+.form-item label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.form-item .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-item .form-check-input {
+  margin-right: 10px;
+}
+.form-item .form-check-label {
+  font-size: 14px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #45a488;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+}
+.or-divider span {
+  background-color: #fff;
+  padding: 0 10px;
+  font-size: 14px;
+}
+.or-divider::before, .or-divider::after {
+  content: "";
+  display: inline-block;
+  width: 24%;
+  height: 1px;
+  background-color: #ccc;
+  vertical-align: middle;
+}
+.or-divider::before {
+  margin-right: 10px;
+}
+.or-divider::after {
+  margin-left: 10px;
+}
+
+.links {
+  text-align: center;
+}
+.links a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 5px 0;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background-color: #f47b20;
+}
+.header__container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+.header__page-title h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0;
+}
+@media screen and (max-width: 896px) {
+  .header__page-title h1 {
+    font-size: 15px;
+  }
+}

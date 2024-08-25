@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      admin: "管理者"
+    attributes:
+      admin:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"

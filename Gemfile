@@ -71,3 +71,5 @@ end
 gem 'slim-rails'
 gem 'sass-rails'
 gem 'dotenv-rails'
+gem 'devise'
+gem 'devise-i18n'

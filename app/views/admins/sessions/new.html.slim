@@ -1,0 +1,22 @@
+.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f|
+    .login-container
+      h2 ログイン
+
+      .form-item
+        = f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+
+      .form-item
+        = f.label :password
+        = f.password_field :password, autocomplete: 'current-password', class: 'form-control'
+
+      .form-item
+        = f.submit 'ログイン', class: 'btn btn-primary btn-block'
+
+      .or-divider
+        span または
+
+      .links
+        = link_to '新規登録の方はこちら', new_registration_path(resource_name)
+        = link_to 'パスワードを忘れた方', new_password_path(resource_name)
