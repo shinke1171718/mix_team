@@ -1,0 +1,28 @@
+.container
+  h2.heading-title ユーザー作成画面
+
+  .form-container
+    = form_with(model: @user, url: admins_users_path, method: :post, local: true, class: "edit-form") do |f|
+      .edit-container
+
+        .form-item
+          = f.label :state, 'ステータス'
+          = f.select :state, User.states_i18n.invert.to_a, { prompt: '選択してください。' }, class: 'form-control'
+
+        .form-item
+          = f.label :name, '名前 (例：開発太郎)', class: 'required-label'
+          = f.text_field :name, class: 'form-control', placeholder: '名前を入力してください'
+
+        .form-item
+          = f.label :email, 'メールアドレス', class: 'required-label'
+          = f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力してください'
+
+        .form-item
+          = f.label :position, '役職'
+          = f.select :position, User.positions_i18n.invert.to_a, { prompt: '選択してください。' }, class: 'form-control'
+
+        .form-item
+          = f.label :department_id, '部署'
+          = f.select :department_id, Department.all.map { |d| [d.name, d.id] }, { prompt: '選択してください。' }, class: 'form-control'
+
+        = f.submit '作成', class: 'btn-submit'

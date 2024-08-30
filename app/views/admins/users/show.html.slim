@@ -1,0 +1,32 @@
+.user-show
+  h2.heading-title ユーザー編集画面
+
+  .user-show__container
+    .user-show__cover-image
+      = image_tag 'background_image.jpg', alt: 'Cover Image', class: 'cover-image'
+
+    .user-show__overlay
+      .user-show__icon-container
+        = image_tag 'account_circle.png', alt: 'User Icon', class: 'user-show__icon'
+        .user-show__name-box
+          h2.user-show__name = @user.name
+          = link_to edit_admins_user_path(@user) do
+            = image_tag 'pencil.png', alt: 'Edit', class: 'user-show__icon-pencil'
+
+    .user-show__details
+      ul.user-show__info
+        li.user-show__info-item
+          = image_tag 'role_icon.png', alt: '役職', class: 'user-show__icon-small'
+          span = @user.position_i18n
+
+        li.user-show__info-item
+          = image_tag 'email_icon.png', alt: 'メール', class: 'user-show__icon-small'
+          span = @user.email
+
+        li.user-show__info-item
+          = image_tag 'department_icon.png', alt: '部署', class: 'user-show__icon-small'
+          span = @user.department.name
+    
+    .user-show__btn-container
+      = link_to 'delete', admins_user_path(@user), data: { turbo_method: :delete }, class: 'user-show__delete-btn', onclick: "return confirm('本当にこのユーザーを削除しますか？')"
+

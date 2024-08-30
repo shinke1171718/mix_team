@@ -11,10 +11,12 @@
 
       nav.header__menu-container
         .header__menu-item
-          a.header__menu-link href="#" Home
+          = link_to 'Home', admins_root_path, class: 'header__menu-link'
         .header__menu-item
-          a.header__menu-link href="#" Member
+          = link_to 'User', admins_users_path, class: 'header__menu-link'
         .header__menu-item
-          a.header__menu-link href="#" User
+          = link_to 'My Page', '#', class: 'header__menu-link'
         .header__menu-item
           = link_to 'Log out', destroy_admin_session_path, method: :delete, data: { turbo_method: :delete }, class: 'header__menu-link'
+
+          admins_users

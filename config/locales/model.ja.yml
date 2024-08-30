@@ -7,3 +7,14 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード（確認）"
+
+  enums:
+    user:
+      state:
+        enable: 有効
+        disable: 無効
+      position:
+        intern: インターン
+        staff: 社員
+        manager: マネージャー
+        executive: 役員

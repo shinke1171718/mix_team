@@ -1,0 +1,278 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  margin: 10px auto 0;
+
+  @include mq-max(md) {
+    max-width: 550px;
+  }
+}
+
+.heading-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+  padding: 4px 0 4px 20px;
+  border-left: 5px solid #ff7e5f;
+  background-color: transparent;
+
+  @include mq-max(md) {
+    font-size: 12px;
+    padding: 3px 0 3px 15px;
+    border-left: 4px solid #ff7e5f;
+    margin-bottom: 20px;
+    margin: 15px 0 0 20px;
+  }
+}
+
+.user-table {
+  @include mq-max(md) {
+    display: none;
+  }
+}
+
+.list-view {
+  display: none;
+
+  @include mq-max(md) {
+    display: block;
+    padding: 10px 20px 0;
+    list-style: none;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+
+    li {
+      a.list-view__link {
+        display: flex;
+        align-items: center;
+        padding: 5px 15px;
+        border-bottom: 1px solid #f1d6c1;
+        min-height: 50px;
+        text-decoration: none;
+        color: inherit;
+        transition: background-color 0.3s ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: #fae0d4;
+        }
+      }
+    }
+
+
+    .list-view__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      margin-right: 15px;
+      flex-shrink: 0;
+
+      .icon-arrow {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__user-name {
+      flex-grow: 1;
+      font-size: 13px;
+      color: #333;
+      text-align: left;
+    }
+
+    &__arrow {
+      flex-shrink: 0;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+
+      .icon-arrow {
+        width: 7px;
+        height: 11px;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.user-show {
+  max-width: 650px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+
+  &__container {
+    max-width: 450px;
+    margin: 10px auto 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9f9f9;
+
+    @include mq-max(md) {
+      max-width: 280px;
+      background-color: #f0e6dc;
+    }
+  }
+
+  &__cover-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    position: relative;
+    bottom: 80px;
+    text-align: center;
+  }
+
+  &__icon-container {
+    margin-bottom: -40px;
+  }
+
+  &__name-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: bold;
+
+    @include mq-max(md) {
+      font-size: 19px;
+    }
+  }
+
+  &__details {
+    background-color: #f9f9f9;
+
+    @include mq-max(md) {
+      background-color: #f0e6dc;
+    }
+  }
+
+  &__icon-pencil {
+    width: 35px;
+    height: 20px;
+    padding-left: 15px;
+
+    @include mq-max(md) {
+      width: 31px;
+      height: 17px;
+    }
+  }
+
+  &__info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #555;
+  }
+
+  &__icon-small {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
+  &__btn-container {
+    margin: 10px 0;
+  }
+
+  &__delete-btn {
+    color: red;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+}
+
+.user-new-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #45a488;
+  }
+
+  @include mq-max(md) {
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px 4px 0;
+  color: #fff;
+
+  @include mq-max(md) {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

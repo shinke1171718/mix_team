@@ -7,6 +7,7 @@
   box-sizing: border-box;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
 *::before,
@@ -26,6 +27,10 @@ body {
   word-break: break-word;
   overflow-wrap: break-word;
   background-color: #ffe7c7;
+
+  @include mq-max(md) {
+    background-color: #fff;
+  }
 }
 
 img {
@@ -38,12 +43,26 @@ img {
   transition: opacity .2s;
 }
 
-#content {
-  min-height: calc(100vh - 100px - 243px);
-}
-
 .container {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #45a488;
+  }
 }

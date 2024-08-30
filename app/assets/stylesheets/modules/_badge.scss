@@ -1,0 +1,40 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 50px;
+
+  &__enable {
+    background-color: rgba(133, 254, 162, 0.2);
+    color: #28a745;
+  }
+
+  &__disable {
+    background-color: rgba(247, 174, 180, 0.2);
+    color: #f2384b;
+  }
+
+
+  &__intern {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  &__staff {
+    background-color: #17a2b8;
+    color: white;
+  }
+
+  &__manager {
+    background-color: #6f42c1;
+    color: white;
+  }
+
+  &__executive {
+    background-color: #e83e8c;
+    color: white;
+  }
+}
