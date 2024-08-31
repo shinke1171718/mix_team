@@ -1,14 +1,11 @@
-.container {
-  padding: 60px 0;
-
-  @include mq-max(md) {
-    padding: 0;
-  }
+.session-container {
+  padding: 60px 10px;
 }
 
 .login-container,
 .signup-container,
-.forgot-password-container {
+.forgot-password-container,
+.edit-user-container {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -53,22 +50,6 @@ h2 {
 
   .form-check-label {
     font-size: 14px;
-  }
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf93;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #45a488;
   }
 }
 

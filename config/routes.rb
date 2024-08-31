@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root 'homes#index'
+    resources :users
   end
 
   devise_for :admins, controllers: {

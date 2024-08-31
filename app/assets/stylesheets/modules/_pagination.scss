@@ -1,0 +1,124 @@
+.pc-pagenation {
+  display: block;
+
+  @include mq-max(md) {
+    display: none;
+  }
+}
+
+.pagination-container {
+  display: flex;
+  margin: 10px 10px;
+
+  @include mq-max(md) {
+    justify-content: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    margin: 0 5px;
+
+    @include mq-max(md) {
+      margin: 0 2px;
+    }
+
+    &-link a,
+    a[rel="next"],
+    a[rel="prev"] {
+      display: block;
+      padding: 8px 16px;
+      background-color: #fff;
+      border-radius: 4px;
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: #9c9c9c;
+        color: #333;
+      }
+
+      @include mq-max(md) {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+
+    &-current span {
+      display: block;
+      padding: 8px 16px;
+      background-color: #ff9f43;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: bold;
+
+      @include mq-max(md) {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+
+    &-gap span {
+      display: block;
+      padding: 8px 16px;
+      background-color: transparent;
+      color: #999;
+
+      @include mq-max(md) {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+
+    &-disabled span {
+      display: block;
+      padding: 8px 16px;
+      background-color: #fff;
+      border-radius: 4px;
+      color: #ccc;
+      cursor: not-allowed;
+      border: 1px solid #ddd;
+
+      @include mq-max(md) {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__item-link a,
+  a[rel="next"],
+  a[rel="prev"] {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+
+    &:hover {
+      background-color: #c7c7c7;
+      color: #333;
+    }
+
+    @include mq-max(md) {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }
+
+  &__item-current a {
+    background-color: #ff9f43;
+    border: 1px solid #ff9f43;
+    color: #fff;
+
+    @include mq-max(md) {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }
+}

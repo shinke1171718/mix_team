@@ -1,0 +1,126 @@
+.form-container {
+  padding: 15px 10px;
+}
+
+.edit-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+
+  @include mq-max(md) {
+    border: none;
+    border-radius: none;
+    adding: 60px;
+  }
+}
+
+.form-item {
+  margin-bottom: 20px;
+
+  @include mq-max(md) {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a488;
+  }
+}
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+
+  span {
+    background-color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24%;
+    height: 1px;
+    background-color: #ccc;
+    vertical-align: middle;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: 40px auto 0;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #63c3ae;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #51a999;
+  }
+
+  &:active {
+    background-color: #3d8b7a;
+  }
+}
+
+.required-label::before {
+  content: "※";
+  color: red;
+  margin-right: 4px;
+  font-size: 19px;
+}

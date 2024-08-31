@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+# Webフォント
+--------------------------------------------------------------*/
+
+@font-face {
+  font-weight: 300;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  src: url('/assets/ZenKakuGothicNew-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  src: url('/assets/ZenKakuGothicNew-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  src: url('/assets/ZenKakuGothicNew-Medium.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  src: url('/assets/ZenKakuGothicNew-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 900;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  src: url('/assets/ZenKakuGothicNew-Black.ttf') format('truetype');
+  font-display: swap;
+}
