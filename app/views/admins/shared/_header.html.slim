@@ -1,7 +1,8 @@
 .header
   .header__container
     .header__page-title
-      h1= "MixTeam"
+      = link_to admins_root_path, class: 'header__ttl' do
+        h1= "MixTeam"
     - if admin_signed_in?
       = check_box_tag 'menu-toggle', '', false, id: 'menu-toggle', class: 'header__menu-toggle'
       label.header__hamburger for="menu-toggle"
@@ -11,12 +12,12 @@
 
       nav.header__menu-container
         .header__menu-item
-          = link_to 'Home', admins_root_path, class: 'header__menu-link'
+          = link_to 'ホーム', admins_root_path, class: 'header__menu-link'
         .header__menu-item
-          = link_to 'User', admins_users_path, class: 'header__menu-link'
+          = link_to 'ユーザー', admins_users_path, class: 'header__menu-link'
         .header__menu-item
-          = link_to 'My Page', '#', class: 'header__menu-link'
+          = link_to 'マイページ', '#', class: 'header__menu-link'
         .header__menu-item
-          = link_to 'Log out', destroy_admin_session_path, method: :delete, data: { turbo_method: :delete }, class: 'header__menu-link'
+          = link_to 'ログアウト', destroy_admin_session_path, method: :delete, data: { turbo_method: :delete }, class: 'header__menu-link'
 
           admins_users

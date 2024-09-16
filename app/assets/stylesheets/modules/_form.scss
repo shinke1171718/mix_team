@@ -2,7 +2,7 @@
   padding: 15px 10px;
 }
 
-.edit-container {
+.form-inner {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
@@ -37,6 +37,7 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    resize: vertical;
   }
 
   .form-check-input {
@@ -123,4 +124,60 @@
   color: red;
   margin-right: 4px;
   font-size: 19px;
+}
+
+.label-font {
+  font-size: 17px;
+  font-weight: 500;
+
+  @include mq-max(md) {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+// event登録編集時のフォームで使用
+.group-size-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.group-size-fields {
+  display: flex;
+  align-items: center;
+
+  .group-size {
+    max-width: 80px;
+    width: 100%;
+    text-align: center;
+    margin: 0 5px;
+  }
+
+  .separator {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .unit {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.notification {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+
+  @include mq-max(md) {
+    font-size: 9px;
+  }
+}
+
+.explanation-txt {
+  margin: 5px 10px;
+  opacity: 0.7;
 }

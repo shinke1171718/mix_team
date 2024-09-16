@@ -1,0 +1,51 @@
+.container
+  .header-container
+    h2.heading-ttl イベント作成画面
+
+  .template
+    .template__container
+      p.template__ttl テンプレートから選択
+      a href="#" class="template__link" data-template="1" シャッフルランチ
+
+  .form-container
+    = form_with(model: [:admins, @event], local: true) do |f|
+      .form-inner
+        .form-item
+          = f.label :title, 'イベント名', class: 'required-label label-font'
+          = f.text_field :title, class: 'form-control title-field', placeholder: '例：シャッフルランチ (最大15文字)'
+
+        .form-item
+          = f.label :event_date, 'イベント日時', class: 'required-label label-font'
+          = f.date_field :event_date, class: 'form-control date-field', min: Date.today
+
+        .form-item
+          = f.label :group_size, '１グループの人数', class: 'required-label label-font'
+          .group-size-fields
+            = f.number_field :min_group_size, class: 'form-control group-size min-size-field', min: 1, placeholder: '3'
+            span.separator 〜
+            = f.number_field :max_group_size, class: 'form-control group-size max-size-field', min: 1, placeholder: '4'
+            span.unit 人
+          .explanation-txt
+            | ※有効ユーザー数: #{User.enabled.count}人
+            br
+            | ※最小人数と最大人数の差は1人以内に設定してください。
+            br
+            |（例: 3〜2人や4〜3人など）
+
+        .form-item
+          = label_tag :include_executives, '条件設定', class: 'label-font'
+          .flex-container
+            .custom-checkbox
+              = check_box_tag 'event[include_executives]', true, false, id: 'include_executives'
+            = label_tag :include_executives, '役員有り', class: 'label-font'
+          .explanation-txt
+            | ※デフォルトで「前回メンバーとの重複」と「同部署2名以上の配置」を防止する設定がされています。
+
+        .form-item
+          = f.label :memo, 'メモ', class: 'label-font'
+          = f.text_area :memo, class: 'form-control memo-field', placeholder: '例: 今日のお題: 会社の中で一番尊敬できる人（最大150文字）'
+
+        = f.submit 'イベントの作成', class: 'btn-submit confirm-btn'
+
+        .notification
+          p ※作成と同時にメンバーへ出欠確認メールを送信します。

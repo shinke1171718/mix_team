@@ -1,0 +1,26 @@
+<h1>イベント参加のご案内</h1>
+
+<p>参加をご希望の方は、詳細をご確認の上、<br>
+リンクをクリックして参加登録をお願いいたします。</p>
+<br>
+==================================<br>
+<div style="margin-top: 10px;">
+  <div style="font-size: 1.1em; margin-bottom: 10px;">
+    <strong>開催日:</strong> <%= @event.event_date.strftime('%Y年%m月%d日') %>
+  </div>
+  <div style="font-size: 1.1em; margin-bottom: 10px;">
+    <strong>イベント名:</strong> <%= @event.title %>
+  </div>
+  <div style="font-size: 1.1em; margin-bottom: 10px;">
+    <strong>メモ:</strong>
+    <div style="margin: 0;">
+      <%= simple_format(@event.memo, {}, wrapper_tag: "div", sanitize: false) %>
+    </div>
+  </div>
+</div>
+==================================<br>
+<br>
+<p>ワンクリックで参加登録が完了します👇</p>
+<p>
+  <a href="<%= @participation_url %>" style="color: #fff; background-color: #46c39f; padding: 10px 20px; border-radius: 5px; text-decoration: none;">イベント参加</a>
+</p>

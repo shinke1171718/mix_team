@@ -1,0 +1,332 @@
+.home-container {
+  display: block;
+  width: 100%;
+  margin: 40px auto;
+  background-color: #f8f9fa;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+
+  @include mq-max(md) {
+    box-shadow: none;
+    padding: 30px;
+    margin: 20px auto;
+    background-color: #fff;
+  }
+}
+
+.event-details {
+  background: linear-gradient(135deg, #ffffff, #e8f4f8);
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include mq-max(md) {
+    padding: 20px;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  &__btn-submit {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto 40px;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #63c3ae;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #51a999;
+    }
+  
+    &:active {
+      background-color: #3d8b7a;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #4caf93;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #4caf93, #36a2eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 80%;
+    margin: 0 auto;
+
+    @include mq-max(md) {
+      width: 100%;
+      font-size: 3.2vw;
+      margin-bottom: 30px;
+    }
+  }
+
+  .event-info {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+    @include mq-max(md) {
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+
+  &__memo-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 6px solid #4caf93;
+  }
+
+  .label {
+    font-weight: bold;
+    color: #4caf93;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+
+    &.event-info__memo-content {
+      margin-bottom: 0;
+    }
+
+    @include mq-max(md) {
+      font-size: 3vw;
+    }
+  }
+
+  &__date,
+  &__group-size {
+    margin-bottom: 10px;
+  }
+
+  &__memo-title {
+    font-weight: bold;
+  }
+
+  &__participants {
+    margin-top: 40px;
+    border-bottom: 2px solid #ddd;
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  &__delete-btn {
+    margin-top: 60px;
+  }
+
+  &__btn {
+    text-decoration: none;
+    color: red;
+    font-size: 1.5rem;
+
+    @include mq-max(md) {
+      font-size: 3vw;
+    }
+  }
+}
+
+.event-paginate {
+  display: flex;
+  justify-content: center;
+}
+
+.group-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @include mq-max(md) {
+    flex-direction: column;
+  }
+}
+
+.group {
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #007b70;
+  }
+  
+  &__card {
+    border: 3px solid #00a29d;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include mq-max(md) {
+      flex: 0 0 100%;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  &__header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #007b70;
+
+    @include mq-max(md) {
+      font-size: 3vw;
+    }
+  }
+  
+  &__body {
+    text-align: center;
+  }
+  
+  &__member-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  &__member-item {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__member-name {
+    margin-right: 0.5rem;
+    font-weight: bold;
+
+    @include mq-max(md) {
+      font-size: 2.8vw;
+    }
+  }
+  
+  &__member-position {
+    color: #007b70;
+    font-size: 1.3rem;
+
+    @include mq-max(md) {
+      font-size: 2.8vw;
+    }
+  }
+}
+
+.template {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+
+  &__container {
+    margin-bottom: 20px;
+    padding: 15px 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+
+    @include mq-max(md) {
+      margin: 10px 0px;
+      background-color: none;
+      border: none;
+    }
+  }
+
+  &__ttl {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #46c39f;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #38a38a;
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+  align-items: center; /* チェックボックスとラベルの垂直方向を中央揃え */
+  gap: 10px; /* チェックボックスとテキストの間に余白 */
+}
+
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: inline-block;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.custom-checkbox input[type=checkbox]:checked::before {
+  content: "✔︎";
+  color: white;
+  font-size: 13px;
+  position: absolute;
+  left: 9px;
+  top: 3px;
+}

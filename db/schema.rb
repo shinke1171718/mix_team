@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_25_065138) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_07_020236) do
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -29,6 +29,37 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_25_065138) do
     t.integer "position", default: 99, null: false
   end
 
+  create_table "events", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "max_group_size", null: false
+    t.integer "min_group_size", null: false
+    t.integer "state", default: 1, null: false
+    t.text "memo"
+    t.datetime "event_date", null: false
+    t.integer "invitees_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.string "group_name", null: false
+    t.integer "sort_order", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_groups_on_event_id"
+  end
+
+  create_table "members", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_members_on_event_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -39,4 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_25_065138) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "groups", "events"
+  add_foreign_key "members", "events"
+  add_foreign_key "members", "users"
 end

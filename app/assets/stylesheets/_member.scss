@@ -1,0 +1,124 @@
+.container {
+  margin-top: 50px;
+
+  @include mq-max(md) {
+    margin-top: 0;
+  }
+}
+
+
+.thanks {
+  &__box {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    @include mq-max(md) {
+      box-shadow: none;
+      padding: 20px;
+    }
+  }
+
+  &__not-joined-ttl  {
+    font-size: 3em;
+    font-weight: bold;
+    color: #1CBBA8;
+
+    @include mq-max(md) {
+      font-size: 5.2vw;
+    }
+  }
+
+  &__has-joined-ttl {
+    font-size: 3em;
+    font-weight: bold;
+
+    @include mq-max(md) {
+      font-size: 5.2vw;
+    }
+  }
+
+  &__has-joined-txt {
+    font-size: 1.3em;
+    color: #1CBBA8;
+  }
+
+  &__not-joined-ttl {
+    color: red;
+  }
+  
+  &__not-joined-txt {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  
+  &__hint-txt {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+  }
+
+  &__ttl {
+    width: 50%;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 5px solid #1CBBA8;
+    display: inline-block;
+    padding-bottom: 10px;
+
+    @include mq-max(md) {
+      width: 100%;
+      font-size: 3.2vw;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  &__date, &__group-size, &__memo-container {
+    font-size: 1.2em;
+    margin: 0;
+
+    @include mq-max(md) {
+      font-size: 3vw;
+    }
+  }
+
+  &__memo-container {
+    display: block;
+  }
+
+  &__memo {
+    text-align: left;
+  }
+
+  &__label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+  }
+}

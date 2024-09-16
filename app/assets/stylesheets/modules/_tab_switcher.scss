@@ -1,0 +1,66 @@
+.area {
+  margin: 2.5em auto;
+  margin-bottom: 1.25em;
+  text-align: center;
+
+  @include mq-max(md) {
+    margin: 2em auto;
+    margin-bottom: 1em;
+  }
+}
+
+.tab_class {
+  padding: 0.9em 2em;
+  border: 2px solid #ccc;
+  border-right: none;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 20px 0 0 20px;
+
+  @include mq-max(md) {
+    padding: 1em 1em;
+    font-size: 3.2vw;
+  }
+}
+
+.tab_class:last-of-type {
+  border-right: 2px solid #ccc;
+  border-radius: 0 20px 20px 0;
+}
+
+/* チェックされたタブのスタイル */
+input[name="tab_name"]:checked + .tab_class {
+  background-color: #6eefca;
+  color: black;
+}
+
+/* チェックされたタブにチェックマークを追加 */
+input[name="tab_name"]:checked + .tab_class::before {
+  content: "✓";
+  margin-right: 10px;
+  color: black;
+}
+
+input[name="tab_name"] {
+  display: none;
+}
+
+.area input:checked + .tab_class {
+  color: gray;
+  background-color: #6eefca;
+}
+
+.content-box {
+  display: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2 {
+  display: block;
+}

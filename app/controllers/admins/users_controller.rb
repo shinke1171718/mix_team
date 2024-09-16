@@ -2,7 +2,7 @@ class Admins::UsersController < Admins::BaseController
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.order_desc.page(params[:page])
+    @users = User.ordered_position.page(params[:page])
   end
 
   def new
@@ -10,7 +10,7 @@ class Admins::UsersController < Admins::BaseController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find params[:id]
   end
 
   def create
