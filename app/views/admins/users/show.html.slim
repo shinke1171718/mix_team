@@ -1,5 +1,7 @@
+.header-container
+  h2.heading-ttl ユーザー詳細画面
+
 .user-show
-  h2.heading-title ユーザー編集画面
 
   .user-show__container
     .user-show__cover-image
@@ -28,5 +30,5 @@
           span = @user.department.name
     
     .user-show__btn-container
-      = link_to 'delete', admins_user_path(@user), data: { turbo_method: :delete }, class: 'user-show__delete-btn', onclick: "return confirm('本当にこのユーザーを削除しますか？')"
+      = link_to '削除', admins_user_path(@user), data: { turbo_method: :delete }, class: 'user-show__delete-btn', onclick: "return confirm('本当にこのユーザーを削除しますか？')"
 

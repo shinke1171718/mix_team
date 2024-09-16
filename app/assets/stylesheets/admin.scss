@@ -2,16 +2,23 @@
 @import "_mixin.scss";
 @import "_base.scss";
 @import "_flash_messages.scss";
+@import "_home.scss";
+@import "_event.scss";
+@import "_member.scss";
 
 // project
 @import "project/_session_form.scss";
 @import "project/_user.scss";
+
+// components
+@import "components/_loading.scss";
 
 // モジュール
 @import "modules/_header.scss";
 @import "modules/_table.scss";
 @import "modules/_badge.scss";
 @import "modules/_form.scss";
+@import "modules/_tab_switcher.scss";
 
 // その他
 @import "modules/_pagination.scss";

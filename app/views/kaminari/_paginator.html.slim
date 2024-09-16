@@ -11,9 +11,9 @@
         - if page.display_tag?
           li class=("pagination__item pagination__item-#{'current' if page.current?}")
             == page_tag page
-        - elsif !page.was_truncated?
+        - elsif page.was_truncated?
           li.pagination__item.pagination__item-gap
-            == gap_tag
+            | ...
 
       li.pagination__item.pagination__item-link
         == next_page_tag unless current_page.last?

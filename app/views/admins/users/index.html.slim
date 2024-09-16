@@ -1,14 +1,12 @@
 .container
   .header-container
-    h2.heading-title ユーザー一覧
+    h2.heading-ttl ユーザー
     .header-btn
       = link_to new_admins_user_path, class: 'user-new-btn' do
         span.icon-text ＋
         = image_tag 'person_icon.png', alt: 'Role Icon', class: 'btn-icon'
-  .pc-pagenation
-    = paginate @users
 
-  table.table.user-table
+  table.table.pc-table
     thead
       tr
         th ステータス
@@ -32,7 +30,7 @@
           td = position_badge(user)
           td
             = link_to edit_admins_user_path(user) do
-              = image_tag 'pencil.png', alt: 'Edit', class: 'icon-pencil'
+              = image_tag 'pencil.png', alt: 'Edit', class: 'icon'
 
   // SP画面用のリスト表示
   ul.list-view
@@ -44,4 +42,7 @@
           .list-view__user-name = user.name
           .list-view__arrow
             = image_tag 'arrow_icon.png', alt: 'arrow', class: 'icon-arrow'
+
+
+  .pc-pagenation
     = paginate @users

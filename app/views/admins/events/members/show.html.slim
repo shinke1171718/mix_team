@@ -1,0 +1,35 @@
+.container
+  .thanks__box
+    - if @event&.state == 'closed'
+      h1.thanks__not-joined-ttl リンクが無効です
+      p.thanks__not-joined-txt 申し訳ありません、リンクの有効期限が切れたか、通信エラーが発生しました。
+      p.thanks__hint-txt リンクが機能しない場合は担当者にご連絡ください。
+
+    - elsif @event && @member
+      h1.thanks__has-joined-ttl
+        = "#{@member.user.name}さんは"
+        br
+        span.thanks__has-joined-txt 参加済み
+        | です。
+
+
+      h2.thanks__ttl
+        = truncate(@event.title, length: 38, omission: '...')
+
+      .thanks__summary
+        .thanks__card
+          p.thanks__date
+            span.thanks__label 日付: 
+            = @event.event_date.strftime('%Y年%m月%d日')
+
+        .thanks__card
+          p.thanks__group-size
+            span.thanks__label グループ人数: 
+            span= "#{@event.min_group_size}~#{@event.max_group_size}人"
+
+        .thanks__card
+          .thanks__memo-container
+            p.thanks__memo
+              span.thanks__label メモ:
+            p.thanks__memo
+              = @event.memo

@@ -4,6 +4,10 @@
   position: relative;
   z-index: 1000;
 
+  &__ttl {
+    text-decoration: none;
+  }
+
   &__container {
     max-width: 1400px;
     width: 100%;
@@ -90,6 +94,7 @@
     padding: 10px 0;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 700;
 
     &:hover {
       font-weight: bold;

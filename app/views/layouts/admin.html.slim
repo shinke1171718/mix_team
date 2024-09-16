@@ -8,8 +8,19 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "admin", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
-    / = javascript_include_tag "admin", "data-turbo-track": "reload", defer: true
+    = javascript_include_tag "admin", "data-turbo-track": "reload", type: "module"
   body
-    = render "admins/shared/header"
+    .wrapper
+      .loading
+        .loading-wrapper
+          .circle
+          .circle
+          .circle
+          .shadow
+          .shadow
+          .shadow
+          span そのままお待ち下さい
+    - if @current_admin && controller.controller_name != 'members'
+      = render "admins/shared/header"
     = render "shared/flash_message"
     = yield

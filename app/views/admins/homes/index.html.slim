@@ -1,1 +1,80 @@
-h1= t(".title")
+.container
+  .header-container
+    h2.heading-ttl ホーム
+
+  .welcome-message
+    .welcome-message__txt
+      p
+        | ようこそMixTeamへ　
+        br.view--sp
+        | さっそくイベントを作成しましょう！
+
+    .welcome-message__link-container
+      = link_to 'イベントを作成', new_admins_event_path, class: '.welcome-message__link'
+
+
+  .home-container
+
+    .event-list
+      p.event-text イベント一覧
+
+    .area
+      input#tab1(type="radio" name="tab_name" checked=(@tab_param == '1'))
+      label.tab_class(for="tab1") 今後のイベント
+
+      input#tab2(type="radio" name="tab_name" checked=(@tab_param == '2'))
+      label.tab_class(for="tab2") 過去のイベント
+
+      #content1.content-box
+        - @entry_events.each do |event|
+          = link_to admins_event_path(event), class: 'event-card-link' do
+            .event-card
+              .event-card__header
+                .event-card__event_date
+                  span = event.event_date.strftime("%Y/%m/%d")
+                .event-card__event-inner
+                  .event-body__title
+                    h3 = event.title
+                  .event-card__event_status
+                    = event_status_badge(event)
+              
+              .event-body
+                .event-body__memo
+                  p.event-body__memo-ttl メモ：
+                  p.event-body__memo-content= event.memo
+
+                .event-body__info
+                  .event-body__info-participant
+                    p.event-body__info-label 参加人数
+                    p.event-body__info-participant-count
+                      = "#{event.members.count || 0}/#{event.invitees_count}"
+
+        .event-paginate
+          = paginate @entry_events, truncate: true, param_name: 'entry_page', params: { tab: '1' }
+
+      #content2.content-box
+        - @closed_events.each do |event|
+          = link_to admins_event_path(event), class: 'event-card-link' do
+            .event-card
+              .event-card__header
+                .event-card__event_date
+                  span = event.event_date.strftime("%Y/%m/%d")
+                .event-card__event-inner
+                  .event-body__title
+                    h3 = event.title
+                  .event-card__event_status
+                    = event_status_badge(event)
+              
+              .event-body
+                .event-body__memo
+                  p.event-body__memo-ttl メモ：
+                  p.event-body__memo-content= event.memo
+
+                .event-body__info
+                  .event-body__info-participant
+                    p.event-body__info-label 参加人数
+                    p.event-body__info-participant-count
+                      = "#{event.members.count || 0}/#{event.invitees_count}"
+        .event-paginate
+          = paginate @closed_events, truncate: true, param_name: 'closed_page', params: { tab: '2' }
+

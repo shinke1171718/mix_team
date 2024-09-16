@@ -68,7 +68,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter = :resque
+  config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "shuffle_lunch_app_production"
 
   config.action_mailer.perform_caching = false
@@ -94,4 +94,17 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.default_url_options = { host: ENV['SITE_DOMAIN'] }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'smtp.gmail.com',
+    user_name: ENV["GMAIL"],
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 end

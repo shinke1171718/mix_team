@@ -1,10 +1,10 @@
 .container
   .header-container
-    h2.heading-title ユーザー編集画面
+    h2.heading-ttl ユーザー編集画面
 
   .form-container
     = form_with(model: @user, url: admins_user_path(@user), method: :patch, local: true, class: "edit-form") do |f|
-      .edit-container
+      .form-inner
 
         .form-item
           = f.label :state, 'ステータス'

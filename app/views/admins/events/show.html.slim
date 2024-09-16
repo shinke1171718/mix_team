@@ -1,0 +1,115 @@
+.container
+  .header-container
+    h2.heading-ttl イベント詳細
+
+  .event-details
+
+    - unless @event.groups.exists?
+      .event-details__shuffle-botton
+        = button_to 'グループ分け', admins_event_groups_path(@event), method: :post, class: 'event-details__btn-submit confirm-btn'
+
+    h3.event-details__title
+      = @event.title
+
+    .event-info
+      p.event-details__date
+        span.label 日付: 
+        = @event.event_date.strftime('%Y年%m月%d日')
+        
+      p.event-details__group-size
+        span.label グループ人数: 
+        span= "#{@event.min_group_size}~#{@event.max_group_size}人"
+
+      p.event-details__memo-title
+        span.label メモ:
+        = simple_format(@event.memo)
+
+    - if @event.groups.present?
+      h3.event-details__title
+        | グループ
+      .group-container
+        - @event.groups.group_by(&:group_name).each do |group_name, groups|
+          .group__card
+            .group__header
+              p = group_name
+            .group__body
+              ul.group__member-list
+                - groups.each do |group|
+                  - group.members.each do |member|
+                    li.group__member-item
+                      span.group__member-name = "#{member.user.name}"
+
+    - else
+      h3.event-details__title
+        | メンバー
+      .area
+        input#tab1(type="radio" name="tab_name" checked)
+        label.tab_class(for="tab1") 参加メンバー
+
+        input#tab2(type="radio" name="tab_name")
+        label.tab_class(for="tab2") 未参加ユーザー
+
+        #content1.content-box
+          table.table.pc-table
+            thead
+              tr
+                th 部署
+                th 氏名
+                th メールアドレス
+                th 役職
+            tbody
+              - @join_users.each do |user|
+                tr
+                  td = user.department.name
+                  td
+                    = link_to user.name, admins_user_path(user), class: 'table__name'
+                  td = user.email
+                  td = position_badge(user)
+
+        #content2.content-box
+          table.table.pc-table
+            thead
+              tr
+                th 部署
+                th 氏名
+                th メールアドレス
+                th 役職
+                th 再送
+            tbody
+              - @non_members.each do |user|
+                tr
+                  td = user.department.name
+                  td
+                    = link_to user.name, admins_user_path(user), class: 'table__name'
+                  td = user.email
+                  td = position_badge(user)
+                  td
+                    = button_to resend_admins_event_member_path(@event, user), method: :post, class: 'resend-button' do
+                      = image_tag 'email.png', alt: 'メール再送信', class: 'email-icon'
+
+
+        // SP画面用のリスト表示
+        #content1.content-box
+          ul.list-view
+            - @join_users.each do |user|
+              li
+                = link_to admins_user_path(user), class: 'list-view__link' do
+                  .list-view__icon
+                    = image_tag 'account_circle.png', alt: 'user', class: 'icon-user'
+                  .list-view__user-name = user.name
+                  .list-view__arrow
+                    = image_tag 'arrow_icon.png', alt: 'arrow', class: 'icon-arrow'
+
+        #content2.content-box
+          ul.list-view
+            - @non_members.each do |user|
+              li
+                = link_to admins_user_path(user), class: 'list-view__link' do
+                  .list-view__icon
+                    = image_tag 'account_circle.png', alt: 'user', class: 'icon-user'
+                  .list-view__user-name = user.name
+                  .list-view__arrow
+                    = image_tag 'arrow_icon.png', alt: 'arrow', class: 'icon-arrow'
+
+    .event-details__delete-btn
+      = link_to 'イベントを削除', admins_event_path(@event), data: { turbo_method: :delete }, class: 'event-details__btn', onclick: "return confirm('本当にこのイベントを削除しますか？')"
